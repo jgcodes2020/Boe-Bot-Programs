@@ -1,0 +1,104 @@
+'{$STAMP BS2}
+'{$PBASIC 2.5}
+
+' TEJ1O1-02 TRACK PROGRAM!
+
+i VAR Word
+
+FOR i = 1 TO 70
+GOSUB forward
+NEXT
+
+PAUSE 100
+
+FOR i = 1 TO 21
+GOSUB left
+NEXT
+
+PAUSE 100
+
+FOR i = 1 TO 55
+GOSUB forward
+NEXT
+
+PAUSE 100
+
+' Long curve part. Requires a LOT of precision.
+
+FOR i = 1 TO 400
+GOSUB slight_right
+NEXT
+
+PAUSE 100
+
+FOR i = 1 TO 20 ' Adjust as neccesary
+GOSUB forward
+NEXT
+
+PAUSE 100
+
+FOR i = 1 TO 22
+GOSUB right
+NEXT
+
+PAUSE 1000
+
+FOR i = 1 TO 150
+GOSUB forward
+NEXT
+
+PAUSE 100
+
+'U-Turn
+
+FOR i = 1 TO 45
+GOSUB left
+NEXT
+
+PAUSE 100
+
+FOR i = 1 TO 55
+GOSUB forward
+NEXT
+
+PAUSE 500
+
+FOR i = 1 TO 18
+GOSUB right
+NEXT
+
+FOR i = 1 TO 50
+GOSUB forward
+NEXT
+
+FOR i = 1 TO 21
+GOSUB left
+NEXT
+
+'THE FINAL THING. YES.
+
+END
+
+forward:
+PULSOUT 12, 850
+PULSOUT 13, 650
+PAUSE 20
+RETURN
+
+left:
+PULSOUT 12, 650
+PULSOUT 13, 650
+PAUSE 20
+RETURN
+
+right:
+PULSOUT 12, 850
+PULSOUT 13, 850
+PAUSE 20
+RETURN
+
+slight_right:
+PULSOUT 12, 850
+PULSOUT 13, 720
+PAUSE 20
+RETURN
