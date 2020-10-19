@@ -25,19 +25,19 @@ PAUSE 100
 
 ' Long curve part. Requires a LOT of precision.
 
-FOR i = 1 TO 400
+FOR i = 1 TO 350
 GOSUB slight_right
 NEXT
 
 PAUSE 100
 
-FOR i = 1 TO 20 ' Adjust as neccesary
+FOR i = 1 TO 85 ' Adjust as neccesary
 GOSUB forward
 NEXT
 
 PAUSE 100
 
-FOR i = 1 TO 22
+FOR i = 1 TO 25
 GOSUB right
 NEXT
 
@@ -51,13 +51,13 @@ PAUSE 100
 
 'U-Turn
 
-FOR i = 1 TO 45
+FOR i = 1 TO 42
 GOSUB left
 NEXT
 
 PAUSE 100
 
-FOR i = 1 TO 55
+FOR i = 1 TO 48
 GOSUB forward
 NEXT
 
@@ -67,20 +67,46 @@ FOR i = 1 TO 18
 GOSUB right
 NEXT
 
-FOR i = 1 TO 50
+PAUSE 100
+
+FOR i = 1 TO 69 ' NICE NICE NICE NICE NICE NICE NICE
 GOSUB forward
 NEXT
 
-FOR i = 1 TO 21
+PAUSE 100
+
+FOR i = 1 TO 25
 GOSUB left
 NEXT
 
 'THE FINAL THING. YES.
 
+FOR i = 1 TO 155
+GOSUB edgel_forward
+NEXT
+
+PAUSE 100
+
+FOR i = 1 TO 18
+GOSUB left
+NEXT
+
+PAUSE 100
+
+FOR i = 1 TO 138 'IDK SORTA NICE
+GOSUB less_slight_right
+NEXT
+
 END
 
 forward:
 PULSOUT 12, 850
+PULSOUT 13, 650
+PAUSE 20
+RETURN
+
+edgel_forward:
+PULSOUT 12, 830
 PULSOUT 13, 650
 PAUSE 20
 RETURN
@@ -99,6 +125,12 @@ RETURN
 
 slight_right:
 PULSOUT 12, 850
-PULSOUT 13, 720
+PULSOUT 13, 721
+PAUSE 20
+RETURN
+
+less_slight_right:
+PULSOUT 12, 850
+PULSOUT 13, 725
 PAUSE 20
 RETURN
