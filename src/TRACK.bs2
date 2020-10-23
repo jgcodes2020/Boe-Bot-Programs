@@ -11,33 +11,49 @@ NEXT
 
 PAUSE 100
 
-FOR i = 1 TO 21
+FOR i = 1 TO 20
 GOSUB left
 NEXT
 
 PAUSE 100
 
-FOR i = 1 TO 55
+FOR i = 1 TO 90
 GOSUB forward
 NEXT
 
 PAUSE 100
+
+FOR i = 1 TO 8
+GOSUB right
+NEXT
+
+PAUSE 300
 
 ' Long curve part. Requires a LOT of precision.
 
-FOR i = 1 TO 350
-GOSUB slight_right
+FOR i = 1 TO 200
+PULSOUT 12, 850
+PULSOUT 13, 715
+PAUSE 20
 NEXT
 
 PAUSE 100
 
-FOR i = 1 TO 85 ' Adjust as neccesary
+FOR i = 1 TO 190
+PULSOUT 12, 850
+PULSOUT 13, 718
+PAUSE 20
+NEXT
+
+PAUSE 100
+
+FOR i = 1 TO 5 ' Adjust as neccesary
 GOSUB forward
 NEXT
 
 PAUSE 100
 
-FOR i = 1 TO 25
+FOR i = 1 TO 23
 GOSUB right
 NEXT
 
@@ -69,13 +85,13 @@ NEXT
 
 PAUSE 100
 
-FOR i = 1 TO 69 ' NICE NICE NICE NICE NICE NICE NICE
+FOR i = 1 TO 80
 GOSUB forward
 NEXT
 
 PAUSE 100
 
-FOR i = 1 TO 25
+FOR i = 1 TO 20
 GOSUB left
 NEXT
 
@@ -123,14 +139,9 @@ PULSOUT 13, 850
 PAUSE 20
 RETURN
 
-slight_right:
-PULSOUT 12, 850
-PULSOUT 13, 721
-PAUSE 20
-RETURN
-
 less_slight_right:
 PULSOUT 12, 850
-PULSOUT 13, 725
+PULSOUT 13, 720
 PAUSE 20
 RETURN
+                    

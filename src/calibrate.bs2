@@ -1,7 +1,24 @@
 '{$STAMP BS2}
 '{$PBASIC 2.5}
+opt VAR nib
 
+DEBUG CLS, "Select a calibration option: ", 13
+DEBUGIN DEC1 opt
+DO UNTIL (opt <= 1)
+	DEBUG CLS, "That's not an option. Pick something valid.", 13
+	DEBUGIN DEC1 opt
+LOOP
+
+IF (opt = 0) THEN
 DO
 	PULSOUT 12, 750
 	PULSOUT 13, 750
+	PAUSE 20
 LOOP
+ELSE
+DO
+	PULSOUT 12, 850
+	PULSOUT 13, 650
+	PAUSE 20
+LOOP
+ENDIF
